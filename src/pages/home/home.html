@@ -1,14 +1,26 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Aritmetica Modular
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-row>
+    <ion-col style="max-width: 105px;">
+      <input style="width: 100px; height: 50px; text-align: center;" type="number" [(ngModel)]="base" />
+    </ion-col>
+    <ion-col style="max-width: 85px;">
+      <input style="width: 80px; border: solid ;text-align: center;" type="number" [(ngModel)]="exponente"/>
+    </ion-col>
+    <ion-col> 
+      <label>Mod</label>
+      <input style="width: 100px; height: 50px;" type="number" [(ngModel)]="modulo"/>
+      <label style="width: 100px; height: 50px;"> = {{resultado}}</label>
+    </ion-col>
+  </ion-row>
+  Binario: <label style="font-size: 20px; color: red"> {{binario}}</label>
+  <br>
+  <button ion-button color="secondary" (click)="converExpToBin()">Calcular</button>
 </ion-content>
