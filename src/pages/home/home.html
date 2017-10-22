@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Aritmetica Modular
+      Aritmetica Modular (potencia binaria)
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -16,11 +16,36 @@
     </ion-col>
     <ion-col> 
       <label>Mod</label>
-      <input style="width: 100px; height: 50px;" type="number" [(ngModel)]="modulo"/>
+      <input style="width: 100px; height: 50px; text-align: center;" type="number" [(ngModel)]="modulo"/>
       <label style="width: 100px; height: 50px;"> = {{resultado}}</label>
     </ion-col>
   </ion-row>
+  <button ion-button color="secondary" (click)="converExpToBin()">Calcular</button>
+  <br>
+  <br>
   Binario: <label style="font-size: 20px; color: red"> {{binario}}</label>
   <br>
-  <button ion-button color="secondary" (click)="converExpToBin()">Calcular</button>
+  <br>
+  Iteraciones:
+  <br>
+  <ion-row *ngFor="let iteracion of ArrayResultado">
+    <ion-col style="max-width: 40px; ">
+      {{iteracion.iteracion}}
+    </ion-col>
+    <ion-col style="max-width: 50px; ">
+      {{iteracion.base}}
+    </ion-col>
+    <ion-col style="max-width: 50px; ">
+      {{iteracion.valorActual}}
+    </ion-col>
+    <ion-col style="max-width: 50px; ">
+      Mod
+    </ion-col>
+    <ion-col style="max-width: 60px; ">
+      {{modulo}} =
+    </ion-col>
+    <ion-col style="max-width: 50px; ">
+      {{iteracion.resultado}}
+    </ion-col>
+  </ion-row>
 </ion-content>
